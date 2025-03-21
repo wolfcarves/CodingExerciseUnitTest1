@@ -5,11 +5,11 @@ class Program
     static void Main(string[] args)
     {
         IUserService userService = new UserService();
-        
+
         userService.UserAdded += user => Console.WriteLine($"[Event] User Added: {user.Id} - {user.Name}");
         userService.UserUpdated += user => Console.WriteLine($"[Event] User Updated: {user.Id} - {user.Name}");
         userService.UserDeleted += id => Console.WriteLine($"[Event] User Deleted: ID {id}");
-        
+
         while (true)
         {
             Console.WriteLine("\nUser Management System");
@@ -19,7 +19,7 @@ class Program
             Console.WriteLine("4. Delete User");
             Console.WriteLine("5. Exit");
             Console.Write("Choose an option: ");
-    
+
             var choice = Console.ReadLine();
             switch (choice)
             {
